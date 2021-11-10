@@ -26,8 +26,6 @@ public class OrderGeneratorController {
     @GetMapping(path = "/generateOrder")
     public Order generateOrder(){
        Order order=orderGenerator.generateOrder();
-        RestTemplate restTemplate=new RestTemplate();
-        restTemplate.postForEntity(orderSenderServer+"/send",order,Object.class);
         return order;
     }
 
