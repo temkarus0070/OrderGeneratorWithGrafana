@@ -12,21 +12,19 @@ import org.temkarus0070.ordergenerator.models.Order;
 import org.temkarus0070.ordergenerator.services.OrderGenerator;
 
 @RestController
+@RequestMapping(path = "/order")
 public class OrderGeneratorController {
     private OrderGenerator orderGenerator;
 
-    @Value("${orderSenderServer}")
-    private String orderSenderServer;
-
     @Autowired
-    public void setOrderGenerator(OrderGenerator orderGenerator) {
+    public OrderGeneratorController(OrderGenerator orderGenerator) {
         this.orderGenerator = orderGenerator;
     }
 
-    @GetMapping(path = "/generateOrder")
-    public Order generateOrder(){
-       Order order=orderGenerator.generateOrder();
-        return order;
+
+    @GetMapping(path = "/generate")
+    public Order generateOrder() {
+        return orderGenerator.generateOrder();
     }
 
 }
