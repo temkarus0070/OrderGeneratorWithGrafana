@@ -20,13 +20,12 @@ public class OrderGenerator {
         Faker faker = new Faker();
         Order order = new Order();
         order.setClientFIO(faker.name().nameWithMiddle());
-        order.setOrderNum(faker.number().randomNumber());
+        order.setOrderNum(faker.number().numberBetween(1,1000000000));
         int goodsCount = faker.number().numberBetween(1, 100);
         List<Good> goods = new ArrayList<>();
         for (int i = 0; i < goodsCount; i++) {
             Good good = new Good();
             good.setCount(faker.number().numberBetween(1, 100));
-            good.setId(faker.number().numberBetween(1, 1000000000));
             int choice = random.nextInt(4);
             switch (choice) {
                 case 0:
