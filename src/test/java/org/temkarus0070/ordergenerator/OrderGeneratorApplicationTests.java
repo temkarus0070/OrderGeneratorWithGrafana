@@ -15,12 +15,8 @@ import org.temkarus0070.ordergenerator.models.Order;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class OrderGeneratorApplicationTests {
-
-
     private MockMvc mockMvc;
     private ObjectMapper objectMapper;
-
-
 
     @Autowired
     public void setObjectMapper(ObjectMapper objectMapper) {
@@ -34,17 +30,10 @@ class OrderGeneratorApplicationTests {
 
     @Test
     public void test() throws Exception {
-
-
-
         final String contentAsString = mockMvc.perform(MockMvcRequestBuilders.get("/order/generate")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
-
-
         final Order order1 = objectMapper.readValue(contentAsString,Order.class);
-
         Assertions.assertNotNull(order1);
     }
-
 }

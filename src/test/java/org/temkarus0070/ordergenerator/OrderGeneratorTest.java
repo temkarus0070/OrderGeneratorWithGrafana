@@ -18,8 +18,12 @@ public class OrderGeneratorTest {
     }
 
     @Test
-    public void test(){
+    public void generationTest() {
         final Order order = orderGenerator.generateOrder();
         Assertions.assertNotNull(order);
+        Assertions.assertNotNull(order.getGoods());
+        Assertions.assertTrue(order.getGoods().size() > 0);
+        Assertions.assertNotNull(order.getClientFIO());
+        Assertions.assertNotEquals("", order.getClientFIO());
     }
 }
