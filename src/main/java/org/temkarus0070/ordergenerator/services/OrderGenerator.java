@@ -1,7 +1,7 @@
 package org.temkarus0070.ordergenerator.services;
 
 import com.github.javafaker.Faker;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.temkarus0070.ordergenerator.models.Good;
 import org.temkarus0070.ordergenerator.models.Order;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 
-@Component
+@Service
 public class OrderGenerator {
 
     public Order generateOrder() {
@@ -19,13 +19,12 @@ public class OrderGenerator {
         Faker faker = new Faker();
         Order order = new Order();
         order.setClientFIO(faker.name().nameWithMiddle());
-        order.setOrderNum(faker.number().randomNumber());
+        order.setOrderNum(faker.number().numberBetween(1,1000000000));
         int goodsCount = faker.number().numberBetween(1, 100);
-        List<Good> goods=new ArrayList<>();
+        List<Good> goods = new ArrayList<>();
         for (int i = 0; i < goodsCount; i++) {
             Good good = new Good();
             good.setCount(faker.number().numberBetween(1, 100));
-            good.setId(faker.number().numberBetween(1, 1000000000));
             int choice = random.nextInt(4);
             switch (choice) {
                 case 0:
