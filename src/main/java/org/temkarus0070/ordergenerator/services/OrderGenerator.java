@@ -1,7 +1,6 @@
 package org.temkarus0070.ordergenerator.services;
 
 import com.github.javafaker.Faker;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.temkarus0070.ordergenerator.models.Good;
 import org.temkarus0070.ordergenerator.models.Order;
