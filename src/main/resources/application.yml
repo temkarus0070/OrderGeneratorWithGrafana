@@ -1,0 +1,21 @@
+server.port: ${GENERATOR_SERVER_PORT:9081}
+project:
+  title: order generator
+  description: generate orders
+spring.application.name: orderGenerator
+opentracing.jaeger:
+  udp-sender:
+    host: ${JAEGER_HOST:localhost}
+    port: 6831
+  log-spans: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
