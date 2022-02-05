@@ -5,7 +5,31 @@
 Генерация заказов с использованием библиотеки javafaker
 
 ## Endpoints:
+- GET /actuator​/beans
+- GET ​/actuator​/caches
+- DELETE /actuator​/caches
+- GET /actuator​/caches​/{cache}
+- DELETE ​/actuator​/caches​/{cache}
+- GET ​/actuator​/conditions
+- GET ​/actuator​/configprops
+- GET ​/actuator​/configprops​/{prefix}
+- GET /actuator​/env
+- GET ​/actuator​/env​/{toMatch}
+- GET ​/actuator​/health
+- GET ​/actuator​/health​/**
+- GET /actuator​/heapdump
+- GET ​/actuator​/info
+- GET /actuator​/loggers
+- GET ​/actuator​/loggers​/{name}
+- POST ​/actuator​/loggers​/{name}
+- GET /actuator​/mappings
+- GET /actuator​/metrics
+- GET ​/actuator​/metrics​/{requiredMetricName}
+- GET /actuator​/prometheus
+- GET /actuator​/scheduledtasks
+- GET ​/actuator​/threaddump
 
+- GET /order​/generate
 ## Запуск:
 
 1. Установите docker и docker compose
