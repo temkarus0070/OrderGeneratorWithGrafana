@@ -1,7 +1,8 @@
 # OrderGeneratorWithGrafana
 
 ![example workflow](https://github.com/temkarus0070/OrderGeneratorWithGrafana/actions/workflows/maven.yml/badge.svg)
-\nГенерация заказов с использованием библиотеки javafaker
+<br />
+Генерация заказов с использованием библиотеки javafaker
 
 ## Endpoints:
 
